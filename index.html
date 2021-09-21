@@ -1,13 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Rock, Paper, Scissors!</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-	<script src="script.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rock, Paper, Scissors!</title>
+  <script src="https://kit.fontawesome.com/26d4a64054.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="grid">
+    <h1 class="title"> Rock, Paper, Scissors!</h1>
+    <div class="main">
+      <h2>Rock</h2>
+
+      <button class="button" id="rock"><i class="far fa-hand-rock"></i></button>
+    </div>
+    <div class="main">
+      <h2>Paper</h2>
+      <button class="button" id="paper"><i class="far fa-hand-paper"></i></button>
+    </div>
+    <div class="main">
+      <h2>Scissors</h2>
+      <button class="button" id="scissors"><i class="far fa-hand-scissors"></i></button>
+    </div>
+    <div class="results">
+      <h2> Player Score </h2>
+      <p id="playerScore">0</p>
+    </div>
+    <div class="results">
+      <h2> Score </h2>
+      <p id="Score"></p>
+    </div>
+    <div class="results">
+      <h2> AI Score </h2>
+      <p id="computerScore">0</p>
+    </div>
+
+
+
+
+
+
+  </div>
+  <script src="script.js"></script>
+</body>
+
 </html>
