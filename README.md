@@ -1,0 +1,1 @@
+This project was built with HTML/CSS/Javascript. It was my first time working with JavaScript so I had to look up a lot of things. I also decided to use CSS Grid for the first time as well. This project taught me a lot about using Javascript with a web page. 
