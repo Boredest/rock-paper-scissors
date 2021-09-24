@@ -1,55 +1,49 @@
 
-let playerScore = 0
+let playerScore = 0;
 let computerScore = 0;
-let roundsPlayed = 0;
 let gameLimit = 5;
+let playerSelection = "";
 
 const rockButton = document.getElementById("rock");
 const paperButton = document.getElementById("paper");
 const scissorsButton = document.getElementById("scissors");
-
 const totalScore = document.getElementById("Score");
-let playerScore = document.getElementById("playerScore");
-totalScore.textContent = playerScore + " - " + computerScore;
+const playerText = document.getElementById("playerScore");
+const aiText = document.getElementById("computerScore");
+const displayWinner = document.getElementById("totalHeader");
 
-
-//const computerSelection = computerPlay();
-let playerSelection = "";
-const computerSelection = computerPlay();
+function game() {
+    playerChoice();
+}
 
 function playerChoice() {
+
+
     paperButton.addEventListener("click", function () {
+        let computerSelection = computerPlay();
         playerSelection = "paper";
-        console.log(playerSelection);
         playRound(playerSelection, computerSelection);
 
     });
 
     rockButton.addEventListener("click", function () {
+        let computerSelection = computerPlay();
         playerSelection = "rock";
-        console.log(playerSelection);
         playRound(playerSelection, computerSelection);
 
     });
 
     scissorsButton.addEventListener("click", function () {
+        let computerSelection = computerPlay();
         playerSelection = "scissors";
-        console.log(playerSelection);
         playRound(playerSelection, computerSelection);
 
     });
 }
 
 
-
-function game() {
-    playerChoice();
-
-}
-
-
 function computerPlay() {
-    const computerChoice = ["Rock", "Paper", "Scissors"];
+    let computerChoice = ["Rock", "Paper", "Scissors"];
     let randomChoice = Math.floor(Math.random() * computerChoice.length);
 
     if (randomChoice === 0) {
@@ -68,55 +62,97 @@ function computerPlay() {
 
 
 function playRound(playerSelection, computerSelection) {
-    //play a round
 
     if (playerSelection === computerSelection.toLowerCase()) {
-        roundsPlayed++;
-        return "It's a tie!";
+        displayWinner.textContent = "Tie!";
+
+
     }
 
     else if (playerSelection === "rock" && computerSelection === "Paper") {
-        roundsPlayed++;
+
         computerScore++;
-        return "YOu Lose";
+        updateScoreUI();
     }
     else if (playerSelection === "paper" && computerSelection === "Scissors") {
-        roundsPlayed++;
-        return "YOu Lose";
+
+        computerScore++;
+        updateScoreUI();
     }
 
     else if (playerSelection === "scissors" && computerSelection === "Rock") {
-        roundsPlayed++;
-        return "YOu Lose";
+
+        computerScore++;
+        updateScoreUI();
     }
 
     else if (computerSelection === "Rock" && playerSelection == "paper") {
-        roundsPlayed++;
         playerScore++;
-        return "You Win!"
+        updateScoreUI();
     }
 
     else if (computerSelection === "Paper" && playerSelection === "scissors") {
-        roundsPlayed++;
         playerScore++;
-        return "You Win!"
+        updateScoreUI();
+
+
     }
 
     else if (computerSelection === "Scissors" && playerSelection === "rock") {
-        roundsPlayed++;
         playerScore++;
-        return "You Win!"
+        updateScoreUI();
+
 
     }
 
 }
 
+function updateScoreUI() {
+    displayWinner.textContent = "Score Total";
+    playerText.textContent = playerScore;
+    aiText.textContent = computerScore;
+    totalScore.textContent = playerScore + " - " + computerScore;
+
+
+    if (playerScore == gameLimit || computerScore == gameLimit) {
+        if (playerScore > computerScore) {
+            displayWinner.textContent = " You Win!";
+            setTimeout(resetGame, 800);
+
+        }
+
+        else {
+            displayWinner.textContent = " You Lose!";
+            setTimeout(resetGame, 800);
+
+        }
+
+
+    }
+}
 
 
 
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    displayWinner.textContent = " Score Total ";
+    playerText.textContent = playerScore;
+    aiText.textContent = computerScore;
+    totalScore.textContent = playerScore + " - " + computerScore;
+
+}
 
 
 game();
+
+
+
+
+
+
+
+
 
 
 

@@ -8,6 +8,7 @@ body{
     background-image: url(Images/lodyas.png);
     font-family: 'Permanent Marker', cursive;
     
+    
 }
 .title{
     grid-column-start:  1;
@@ -18,7 +19,6 @@ body{
     color: white;
     margin-top: 5rem;
     
-   
 }
 h2{
     margin-top: 1rem;
@@ -27,6 +27,11 @@ h2{
     font-size: 1.75rem;
     
 }
+p{
+    color: white;
+    font-size: 2.5rem;
+}
+
 .far{
     color: black;
     font-size: 7.5rem;
@@ -45,31 +50,93 @@ h2{
    
 }
 .button:hover{
-    border: 4px solid black;
-    
-    
+    outline: 2.5px solid black;
+
 }
 .grid{
     margin: auto;
     width: 50%;
+    height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 10vh 80vh 10vh;
-    /*background-color:  yellow;*/
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
     text-align: center;
-    align-items: center;
+    align-items: start;
     justify-items: center;
     
-
+    
     
 }
 
-.results{
-    margin-bottom: 5rem;
+
+
+.div h2{
+    margin-bottom: auto;
     font-size: 2.5rem;
-    color: white
+    color: white;
 }
 
+@media only screen and (max-width: 600px){
+    .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+        "title"
+        "rock"
+        "paper"
+        "scissors"
+        "player-results"
+        "score-results"
+        "ai-results";
+        margin: auto;
+        height: 100vh;
+        width: 100%;
+        gap: 0.05rem;
+      
+        
+    }
+    .icon-header{
+        display: none;;
+    }
+    .title{
+        grid-area: title;
+        font-size: 2rem;
+        
+    }
+
+    .rock{
+        grid-area: rock;
+        
+    }
+    
+    .paper{
+        grid-area: paper;
+    }
+    .scissors {
+        grid-area: scissors;
+    }
+
+   
+    .far{
+        font-size: 4rem;
+    }
+
+    .player-results{
+        grid-area: player-results;
+       
+    }
+    
+    .score-results{
+        grid-area: score-results;
+    }
+
+    .computer-results{
+        grid-area: ai-results;
+       
+    }
+  
+   
+}
 
 
 
