@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+}
+
+.main{
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.buttons{
+ display: flex;
+ gap: 1rem;
+
+}
