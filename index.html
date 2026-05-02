@@ -5,21 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <title>Rock Paper Scissors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
   </head>
   <body>
     <main class="main">
-    <section class="buttons">
-      <button id="Rock">
-        <img src="Images/rock.png" alt="Rock Icon" draggable="false">
-      </button>
-      <button id="Paper">
-        <img src="Images/paper.png" alt="Paper Icon" draggable="false">
-      </button>
-      <button id="Scissors"> 
-        <img src="Images/scissors.png" alt="Scissors Icon" draggable="false">
-      </button>
-    </section>
-  </main>
+      <section class="score-display-section">
+        <p class="total-score">Score: 0 0</p>
+        <div class="winner-text">
+          <p>Winner: </p>
+        </div>
+      </section>
+      <section class="buttons">
+        <button id="Rock">
+          <img src="Images/rock.png" alt="Rock Icon" draggable="false" />
+        </button>
+        <button id="Paper">
+          <img src="Images/paper.png" alt="Paper Icon" draggable="false" />
+        </button>
+        <button id="Scissors">
+          <img
+            src="Images/scissors.png"
+            alt="Scissors Icon"
+            draggable="false"
+          />
+        </button>
+      </section>
+    </main>
     <script src="app.js"></script>
   </body>
 </html>
