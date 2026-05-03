@@ -7,10 +7,10 @@ let playedRounds = 0;
 let playerScore = 0;
 let computerScore = 0;
 
-let scoreText = document.querySelector(".total-score");
+let gameOver = false;
 
 let playerScoreText = document.querySelector(".player-score");
-let computerScoreText = document.querySelector(".computer-score-text");
+let computerScoreText = document.querySelector(".computer-score");
 
 const winnerText = document.querySelector(".winner-text");
 
@@ -35,11 +35,8 @@ function playRound(humanChoice, computerChoice) {
     playerScore++;
   } else if (humanChoice == "scissors" && computerChoice == "paper") {
     playerScore++;
-  } else if (humanChoice == "rock" && computerChoice == "paper") {
-    computerScore++;
-  } else if (humanChoice == "paper" && computerChoice == "scissors") {
-    computerScore++;
-  } else if (humanChoice == "scissors" && computerChoice == "rock") {
+  }
+  else{
     computerScore++;
   }
   
@@ -67,7 +64,8 @@ if(playerScore > computerScore){
 
 
 function updateScoreDisplay() {
-  scoreText.textContent = "Score " + playerScore + " " + computerScore;
+  playerScoreText.textContent = playerScore;
+  computerScoreText.textContent = computerScore;
 }
 
 function resetGame() {
@@ -75,6 +73,7 @@ function resetGame() {
   playerScore = 0;
   computerScore = 0;
   playedRounds = 0;
+  gameOver = false;
   updateScoreDisplay();
   
 

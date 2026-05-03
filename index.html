@@ -8,14 +8,30 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     
   </head>
   <body>
+    <header class="header">
+      <h1 class="title">ROCK PAPER SCISSORS</h1>
+    </header>
     <main class="main">
       <section class="score-display-section">
-        <p class="total-score">Score: 0 0</p>
-        <div class="winner-text">
-          <p>Winner: </p>
+        <p class="score-header">Score</p>
+        <div class="score-container">
+        <div class="score-box">
+        <p>Player</p>
+        <p class="player-score">0</p>
+        </div>
+        <div class="score-box">
+        <p>Computer</p>
+        <p class="computer-score">0</p>
+        </div>
+        </div>
+        <div>
+          <p class="winner-text"></p>
         </div>
       </section>
       <section class="buttons">
@@ -34,6 +50,9 @@
         </button>
       </section>
     </main>
+    <footer class="footer">
+      Copyright © <script>document.write(new Date().getFullYear());</script> Boredest
+    </footer>
     <script src="app.js"></script>
   </body>
 </html>

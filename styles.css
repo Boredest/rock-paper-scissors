@@ -2,22 +2,39 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+}
+
+header{
+display: flex;
+justify-content: center;
+padding: 2.5rem 0rem;
+background-color: #0a141a ;
+}
+
+.title{
+  font-family: "Press Start 2P", sans-serif;
+  color: white;
 }
 
 body {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 
 .main {
-  background-color: grey;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   flex-direction: column;
-  gap: 10px;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: auto;
+  gap: 5rem;
+}
+.score-header{
+  font-size: 3rem;
 }
 
 .score-display-section{
@@ -28,8 +45,23 @@ body {
   justify-content: center;
   gap: 3rem;
   margin-bottom: 1rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-family: "Roboto", sans-serif;
 }
+
+.score-container{
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.score-box{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+
 
 .score-row{
   display: flex;
@@ -57,4 +89,14 @@ button:hover {
 button:active {
   box-shadow: 5px 5px #666;
   transform: translateY(4px);
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  width: 100%;
+  color:  white;
+  font-family: "Roboto", sans-serif;
 }
