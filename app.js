@@ -2,11 +2,8 @@ let choices = ["rock", "paper", "scissors"];
 
 const scoreLimit = 5;
 
-let playedRounds = 0;
-
 let playerScore = 0;
 let computerScore = 0;
-
 
 let playerScoreText = document.querySelector(".player-score");
 let computerScoreText = document.querySelector(".computer-score");
@@ -16,9 +13,9 @@ const winnerText = document.querySelector(".winner-text");
 function getComputerChoice() {
   let computerChoice = Math.floor(Math.random() * choices.length);
 
-  if (computerChoice == 0) {
+  if (computerChoice === 0) {
     return "rock";
-  } else if (computerChoice == 1) {
+  } else if (computerChoice === 1) {
     return "paper";
   } else {
     return "scissors";
@@ -27,12 +24,12 @@ function getComputerChoice() {
 
 function playRound(humanChoice, computerChoice) {
   console.log(humanChoice, computerChoice);
-  if (humanChoice == computerChoice) {
-  } else if (humanChoice == "rock" && computerChoice == "scissors") {
+  if (humanChoice === computerChoice) {
+  } else if (humanChoice === "rock" && computerChoice === "scissors") {
     playerScore++;
-  } else if (humanChoice == "paper" && computerChoice == "rock") {
+  } else if (humanChoice === "paper" && computerChoice === "rock") {
     playerScore++;
-  } else if (humanChoice == "scissors" && computerChoice == "paper") {
+  } else if (humanChoice === "scissors" && computerChoice === "paper") {
     playerScore++;
   } else {
     computerScore++;
@@ -64,7 +61,6 @@ function updateScoreDisplay() {
 function resetGame() {
   playerScore = 0;
   computerScore = 0;
-  playedRounds = 0;
   winnerText.textContent = "";
   updateScoreDisplay();
 }
