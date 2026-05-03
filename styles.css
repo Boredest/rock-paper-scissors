@@ -4,14 +4,14 @@
   box-sizing: border-box;
 }
 
-header{
-display: flex;
-justify-content: center;
-padding: 2.5rem 0rem;
-background-color: #0a141a ;
+header {
+  display: flex;
+  justify-content: center;
+  padding: 2.5rem 0rem;
+  background-color: #0a141a;
 }
 
-.title{
+.title {
   font-family: "Press Start 2P", sans-serif;
   color: white;
 }
@@ -33,11 +33,11 @@ body {
   flex-basis: auto;
   gap: 5rem;
 }
-.score-header{
+.score-header {
   font-size: 3rem;
 }
 
-.score-display-section{
+.score-display-section {
   display: flex;
   flex-direction: column;
   color: white;
@@ -49,21 +49,19 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.score-container{
+.score-container {
   display: flex;
   justify-content: space-between;
   gap: 3rem;
 }
 
-.score-box{
- display: flex;
- flex-direction: column;
- align-items: center;
+.score-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-
-.score-row{
+.score-row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -91,12 +89,12 @@ button:active {
   transform: translateY(4px);
 }
 
-.footer{
+.footer {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0.5rem;
   width: 100%;
-  color:  white;
+  color: white;
   font-family: "Roboto", sans-serif;
 }

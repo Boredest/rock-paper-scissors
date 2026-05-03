@@ -7,7 +7,6 @@ let playedRounds = 0;
 let playerScore = 0;
 let computerScore = 0;
 
-let gameOver = false;
 
 let playerScoreText = document.querySelector(".player-score");
 let computerScoreText = document.querySelector(".computer-score");
@@ -35,33 +34,27 @@ function playRound(humanChoice, computerChoice) {
     playerScore++;
   } else if (humanChoice == "scissors" && computerChoice == "paper") {
     playerScore++;
-  }
-  else{
+  } else {
     computerScore++;
   }
-  
+
   updateScoreDisplay();
 
   if (playerScore === scoreLimit || computerScore === scoreLimit) {
     showWinner();
-    resetGame();
+    setTimeout(resetGame, 2000);
   }
 }
 
-function showWinner(){
-if(playerScore > computerScore){
-  winnerText.textContent = "Player wins the game!";
-}
-  else if (computerScore > playerScore){
+function showWinner() {
+  if (playerScore > computerScore) {
+    winnerText.textContent = "Player wins the game!";
+  } else if (computerScore > playerScore) {
     winnerText.textContent = "Computer wins the game!";
-  }
-
-  else if (playerScore === computerScore){
+  } else if (playerScore === computerScore) {
     winnerText.textContent = "Tie game.";
   }
-
 }
-
 
 function updateScoreDisplay() {
   playerScoreText.textContent = playerScore;
@@ -69,14 +62,11 @@ function updateScoreDisplay() {
 }
 
 function resetGame() {
-  console.log("Resetting game...");
   playerScore = 0;
   computerScore = 0;
   playedRounds = 0;
-  gameOver = false;
+  winnerText.textContent = "";
   updateScoreDisplay();
-  
-
 }
 const buttonsContainer = document.querySelector(".buttons");
 
@@ -91,7 +81,6 @@ buttonsContainer.addEventListener("click", (event) => {
       break;
 
     case "paper":
-      
       playRound(playerChoice, getComputerChoice());
       break;
     case "scissors":
@@ -99,4 +88,3 @@ buttonsContainer.addEventListener("click", (event) => {
       break;
   }
 });
-
